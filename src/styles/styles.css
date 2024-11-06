@@ -1,0 +1,556 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 45px;
+    margin-right: 12px;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.logo-image:hover {
+    transform: rotate(360deg); /* Spin on hover */
+}
+
+.logo span {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #4A90E2;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.logo span:hover {
+    color: #333;
+}
+
+/* Navbar Links and Buttons */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.1em;
+    position: relative;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    color: #4A90E2;
+}
+
+.nav-item::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #4A90E2;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+/* Buttons */
+.learn-more-btn, .claim-rewards-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.learn-more-btn {
+    background-color: white;
+    color: black;
+    border: 2px solid #333;
+}
+
+.learn-more-btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+.claim-rewards-btn {
+    background-color: #4A90E2;
+    color: white;
+}
+
+.claim-rewards-btn:hover {
+    background-color: #357ABD;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px 50px;
+    background-color: white;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+
+/* Success and Error Message Styling */
+.success-message, .error-message {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.action-buttons .button-container .success-message {
+    color: green !important;
+}
+
+.action-buttons .button-container .error-message {
+    color: red !important;
+}
+
+
+.view-activity-btn, .view-profile-btn {
+    padding: 12px 28px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    flex: 0 0 auto; /* Prevent buttons from resizing */
+}
+
+.view-activity-btn:hover, .view-profile-btn:hover {
+    background-color: #357ABD;
+    transform: scale(1.1);
+}
+
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Add some smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Individual button section */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align buttons to the left */
+    gap: -5px; /* Small gap between text and button */
+    margin-bottom: 10px; /* Adjusts space between sections */
+}
+
+.metamask-btn:hover, .register-btn:hover {
+    background-color: #357ABD; /* Hover color */
+}
+
+/* Profile link section */
+.profile-link-container {
+    margin-top: 15px;
+}
+
+.profile-link-text {
+    font-size: 14px;
+    color: #333;
+}
+
+.profile-link {
+    color: #4A90E2; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.profile-link:hover {
+    text-decoration: underline;
+}
+  
+  /* UserInfoForm.css */
+
+.form-container {
+    max-width: 600px; /* Limit the form width */
+    margin: 100px auto; /* Center the form and add top margin */
+    padding: 20px;
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h2 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 30px; /* Space below the heading */
+    color: #4A90E2; /* Match with the theme color */
+}
+
+.user-info-form {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+}
+
+.form-input,
+.form-select {
+    padding: 15px; /* Spacing inside inputs */
+    margin: 10px 0; /* Space between inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1em; /* Font size */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.form-input:focus,
+.form-select:focus {
+    border-color: #4A90E2; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.form-button {
+    padding: 15px; /* Spacing inside button */
+    background-color: #4A90E2; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 50px; /* Rounded button */
+    font-size: 1.2em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    margin-top: 10px; /* Space above the button */
+}
+
+.form-button:hover {
+    background-color: #357ABD; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly scale button on hover */
+}
+
+/* Profile Section */
+.profile-section {
+    padding: 100px 50px;
+    background-color: #f5f5f5;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.profile-header h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.profile-header p {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 10px;
+}
+
+.profile-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.profile-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+}
+
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.profile-card h2 {
+    font-size: 1.8em;
+    color: #333;
+}
+
+.profile-card .user-email {
+    color: #777;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.profile-details {
+    text-align: left; /* Align text to the left */
+    margin: 20px 0; /* Add vertical margin */
+}
+
+.profile-details p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px; /* Space between details */
+}
+
+.profile-details span {
+    font-weight: bold; /* Highlight detail values */
+    color: #4A90E2; /* Theme color for emphasis */
+}
+
+.edit-profile-btn {
+    padding: 10px 25px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px; /* Add this line to increase space above the button */
+}
+
+.edit-profile-btn:hover {
+    background-color: #357ABD;
+    transform: scale(1.1);
+}
+
+/* Stats Section */
+.stats-section {
+    width: 65%;
+}
+
+.stats-section h3 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.stats-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap */
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Adjusting the card layout */
+.stat-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Adjust the width to fit three cards in a row */
+    text-align: center;
+}
+
+/* Common styles for all cards */
+.stat-card h4 {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* General styles for all card text */
+.stat-card p {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Specific adjustment for Last Activity Timestamp card */
+.stat-card:nth-child(3) p {
+    font-size: 1.4em; /* Smaller font size specifically for Last Activity Timestamp */
+}
+
+/* General font size for other cards */
+.stat-card:not(:nth-child(3)) p {
+    font-size: 2.5em; /* Font size for Total Distance and Total Rewards */
+}
+
+/* Card hover effect */
+.stat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ensuring the new cards are placed under the original cards */
+@media (min-width: 768px) {
+    .stats-cards > .stat-card {
+        width: 30%; /* Width for larger screens to fit 3 cards per row */
+    }
+}
+
+/* Adjustments for mobile */
+@media (max-width: 767px) {
+    .stats-cards > .stat-card {
+        width: 100%; /* Full width for mobile */
+        margin-bottom: 20px; /* Space between cards */
+    }
+}
+
+/* Action buttons container */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns everything to the left */
+    gap: 10px; /* Controls the gap between button sections */
+}
+
+.step-text {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin: 0; /* Remove margin to avoid extra spacing */
+}
+
+/* Button styling */
+.metamask-btn, .register-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4A90E2; /* Button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.metamask-btn:hover, .register-btn:hover {
+    background-color: #357ABD; /* Hover color */
+}
+
+/* Profile link section */
+.profile-link-container {
+    margin-top: 15px;
+}
+
+.profile-link-text {
+    font-size: 14px;
+    color: #333;
+}
+
+.profile-link {
+    color: #4A90E2; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.profile-link:hover {
+    text-decoration: underline;
+}
+
+/* Container styling */
+.metamask-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#account-info {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f9f9;
+    border: 2px solid #4A90E2;
+    border-radius: 10px;
+}
+
+
+.log-activity {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+  }
+  
+  .log-activity h4 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+  }
+  
+  .log-activity input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 200px;
+  }
+  
+  .log-activity button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .log-activity button:hover {
+    background-color: #0056b3;
+  }
+  
+  .user-email {
+    word-break: break-all; /* Allows breaking long words onto the next line */
+    overflow-wrap: break-word; /* Provides better control for long words */
+    margin-top: 5px; /* Adds some space above the email */
+    font-size: 0.9em; /* Optional: Adjust font size if needed */
+    color: #555; /* Optional: Adjust text color */
+  }
